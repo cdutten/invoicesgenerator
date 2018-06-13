@@ -6,7 +6,7 @@
  * Time: 14:37
  */
 
-namespace cdutten\generator;
+namespace cdutten\invoicesgenerator;
 
 
 class Invoice
