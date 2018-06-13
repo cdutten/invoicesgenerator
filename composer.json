@@ -1,0 +1,13 @@
+{
+    "name": "cdutten/invoices-generator",
+    "description": "PDF and Excel generator, made for fun.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cesar Dutten",
+            "email": "cdutten@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
