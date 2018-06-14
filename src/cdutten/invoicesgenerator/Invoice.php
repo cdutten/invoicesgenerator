@@ -8,8 +8,12 @@
 
 namespace cdutten\invoicesgenerator;
 
+use cdutten\invoicesgenerator\contracts\InvoiceTypeInterface;
 
-class Invoice
+class Invoice implements InvoiceTypeInterface
 {
-
+    public function process()
+    {
+        // TODO: Implement process() method.
+    }
 }
