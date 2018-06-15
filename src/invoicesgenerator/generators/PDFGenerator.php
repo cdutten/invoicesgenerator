@@ -8,13 +8,13 @@
 
 namespace invoicesgenerator\generators;
 
-use     invoicesgenerator\contracts\GeneratorInterface;
+use invoicesgenerator\contracts\GeneratorInterface;
 
 class PDFGenerator implements GeneratorInterface
 {
     public function put($path, $content)
     {
-        // TODO: Implement generate() method.
+        // TODO: Implement put() method.
     }
 
     public function isWritable($path)
