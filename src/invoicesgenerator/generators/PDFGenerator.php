@@ -6,9 +6,9 @@
  * Time: 22:43
  */
 
-namespace cdutten\invoicesgenerator\generators;
+namespace invoicesgenerator\generators;
 
-use cdutten\invoicesgenerator\contracts\GeneratorInterface;
+use     invoicesgenerator\contracts\GeneratorInterface;
 
 class PDFGenerator implements GeneratorInterface
 {

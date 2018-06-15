@@ -6,9 +6,9 @@
  * Time: 14:37
  */
 
-namespace cdutten\invoicesgenerator;
+namespace invoicesgenerator;
 
-use cdutten\invoicesgenerator\contracts\InvoiceTypeInterface;
+use invoicesgenerator\contracts\InvoiceTypeInterface;
 
 class Invoice implements InvoiceTypeInterface
 {

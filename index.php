@@ -8,6 +8,6 @@ compo */
 
 require __DIR__ . '\vendor\autoload.php';
 
-use cdutten\invoicesgenerator\Invoice;
+use invoicesgenerator\Invoice;
 
 new Invoice();

@@ -6,7 +6,7 @@
  * Time: 22:43
  */
 
-namespace cdutten\invoicesgenerator\generators;
+namespace invoicesgenerator\generators;
 
 
 class XLSXGenerator

@@ -6,7 +6,7 @@
  * Time: 22:48
  */
 
-namespace cdutten\invoicesgenerator\contracts;
+namespace invoicesgenerator\contracts;
 
 
 interface GeneratorInterface
