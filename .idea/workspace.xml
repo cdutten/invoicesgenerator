@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="e2d0ff5a-c57b-4333-8a53-b9e8ce128b58" name="First steps" comment="" />
     <list default="true" id="08de4c61-2073-43c9-8957-7aaa260ee609" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/invoicesgenerator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/invoicesgenerator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cdutten/invoicesgenerator/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/invoicesgenerator/Invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cdutten/invoicesgenerator/contracts/GeneratorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/invoicesgenerator/contracts/GeneratorInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cdutten/invoicesgenerator/contracts/InvoiceTypeInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/invoicesgenerator/contracts/InvoiceTypeInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cdutten/invoicesgenerator/generators/PDFGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/invoicesgenerator/generators/PDFGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cdutten/invoicesgenerator/generators/XLSXGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/invoicesgenerator/generators/XLSXGenerator.php" afterDir="false" />
     </list>
+    <list id="e2d0ff5a-c57b-4333-8a53-b9e8ce128b58" name="First steps" comment="" />
     <ignored path="C:\xampp7.2\htdocs\invoicesgenerator\.idea\shelf/" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,11 +68,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PDFGenerator.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PDFGenerator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/invoicesgenerator/generators/PDFGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="408">
               <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -119,6 +121,7 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/invoicesgenerator/generators/PDFGenerator.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -159,16 +162,6 @@
             <path>
               <item name="invoicesGenerator" type="b2602c69:ProjectViewProjectNode" />
               <item name="invoicesgenerator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="invoicesGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="invoicesgenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="invoicesGenerator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="invoicesgenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -228,12 +221,12 @@
       <workItem from="1528911870030" duration="2027000" />
       <workItem from="1528913917885" duration="33000" />
       <workItem from="1528938401526" duration="3712000" />
-      <workItem from="1529088015420" duration="398000" />
+      <workItem from="1529088015420" duration="571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7065000" />
+    <option name="totallyTimeSpent" value="7238000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -255,7 +248,7 @@
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3295583" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32922733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32922733" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -451,8 +444,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/invoicesgenerator/generators/PDFGenerator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="408">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
         </state>
       </provider>
     </entry>
