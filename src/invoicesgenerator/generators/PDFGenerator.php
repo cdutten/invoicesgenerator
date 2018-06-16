@@ -19,26 +19,26 @@ class PDFGenerator implements GeneratorInterface
 
     public function isWritable($path)
     {
-        // TODO: Implement isWritable() method.
+        return is_writable($path);
     }
 
     public function exists($path)
     {
-        // TODO: Implement exists() method.
+        return file_exists($path);
     }
 
     public function isDirectory($directory)
     {
-        // TODO: Implement isDirectory() method.
+        return is_dir($directory);
     }
 
     public function makeDirectory($path)
     {
-        // TODO: Implement makeDirectory() method.
+        return mkdir($path);
     }
 
     public function cleanDirectory($directory)
     {
-        // TODO: Implement cleanDirectory() method.
+        return $this-><deleteDirectory($directory, true);
     }
 }

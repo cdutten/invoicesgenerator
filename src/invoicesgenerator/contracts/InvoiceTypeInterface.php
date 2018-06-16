@@ -11,5 +11,5 @@ namespace invoicesgenerator\contracts;
 
 interface InvoiceTypeInterface
 {
-    public function process ();
+    public function process(GeneratorInterface $generator);
 }
