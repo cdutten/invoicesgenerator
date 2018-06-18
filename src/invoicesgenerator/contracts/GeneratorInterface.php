@@ -20,7 +20,7 @@ interface GeneratorInterface
 
     public function isDirectory($directory);
 
-    public function makeDirectory($path);
+    public function makeDirectory($path, $mode = 0755, $recursive = false);
 
     public function delete($paths);
 
