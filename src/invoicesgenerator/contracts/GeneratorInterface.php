@@ -22,5 +22,9 @@ interface GeneratorInterface
 
     public function makeDirectory($path);
 
+    public function delete($paths);
+
+    public function deleteDirectory($directory, $preserve);
+
     public function cleanDirectory($directory);
 }

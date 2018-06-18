@@ -8,11 +8,12 @@
 
 namespace invoicesgenerator;
 
+use invoicesgenerator\contracts\GeneratorInterface;
 use invoicesgenerator\contracts\InvoiceTypeInterface;
 
 class Invoice implements InvoiceTypeInterface
 {
-    public function process()
+    public function process(GeneratorInterface $generator)
     {
         // TODO: Implement process() method.
     }
