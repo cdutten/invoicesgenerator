@@ -12,8 +12,8 @@ use invoicesgenerator\generators\Writers\FieldsWriter;
 use invoicesgenerator\generators\XLSXGenerator;
 
 try {
-    $generator = new XLSXGenerator(__DIR__ . '\\example\\', 'test.xlsx');
-    $generator->setTemplate(__DIR__ . '\\example\\template.xlsx');
+    $generator = new XLSXGenerator(__DIR__ .  '\\..\\example\\', 'test.xlsx');
+    $generator->setTemplate(__DIR__ . '\\..\\example\\template.xlsx');
 
     $map = [
         'map' => [
