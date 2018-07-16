@@ -62,12 +62,12 @@ class FieldsWriter implements WriterInterface
 
     /**
      * Set the values to write in the cells
-     * @param array $values
+     * @param array $opts
      * @return $this
      */
-    public function setValues($values = [])
+    public function setValues($opts = [])
     {
-        $this->values = $values;
+        $this->values = $opts['map'];
         return $this;
     }
 

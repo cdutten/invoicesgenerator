@@ -96,14 +96,14 @@ class XLSXGenerator
 
     /**
      * @param WriterInterface $writer
-     * @param $map
+     * @param $opts
      * @throws WriterException
      */
-    public function writeTemplate(WriterInterface $writer, $map)
+    public function writeTemplate(WriterInterface $writer, $opts)
     {
         $this->spreadsheet = $writer->setSpreadsheet($this->spreadsheet)
-                                    ->setOpts($map)
-                                    ->setValues($map)
+                                    ->setOpts($opts)
+                                    ->setValues($opts)
                                     ->write();
         $this->save();
     }

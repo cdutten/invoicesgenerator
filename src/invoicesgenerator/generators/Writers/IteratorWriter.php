@@ -11,6 +11,8 @@ namespace invoicesgenerator\generators\Writers;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use invoicesgenerator\contracts\WriterInterface;
 use PhpOffice\PhpSpreadsheet\Exception as PhpSpreadSheetException;
+use PhpOffice\PhpSpreadsheet\Worksheet\RowIterator;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 /**
  * Class IteratorWriter
@@ -51,6 +53,7 @@ class IteratorWriter implements WriterInterface
     /**
      * @param array $opts
      * @return $this
+     * @throws PhpSpreadSheetException
      */
     public function setOpts($opts)
     {
@@ -59,34 +62,56 @@ class IteratorWriter implements WriterInterface
         }
 
         if ($opts['map']) {
-            $this->map = $this->generateMap($opts['map']);
+            $this->generateMap($opts['map']);
         }
         return $this;
     }
 
 
     /**
-     * @param $values
+     * @param $opts
      * @return $this
      */
-    public function setValues($values)
+    public function setValues($opts)
     {
-        $this->values = $values;
+        $this->values = $opts['map'];
         return $this;
     }
 
     /**
      * @return Spreadsheet
+     * @throws PhpSpreadSheetException
+     *
+     * // TODO: Implement write() method.
+     * $activeSheet = $this->spreadsheet->setActiveSheetIndex(0);
+     * $clonedWorksheet = clone $activeSheet->getSheetByName('Worksheet 1');
+     * $clonedWorksheet->setTitle();
+     * $this->spreadsheet->addSheet($clonedWorksheet);
      */
     public function write()
     {
-        // TODO: Implement write() method.
-        $activeSheet = $this->spreadsheet->setActiveSheetIndex(0);
-        $clonedWorksheet = clone $activeSheet->getSheetByName('Worksheet 1');
-        $clonedWorksheet->setTitle();
-        $this->spreadsheet->addSheet($clonedWorksheet);
+        $activeSheet = $this->spreadsheet->setActiveSheetIndex($this->map['sheet']);
+        $iterator = $activeSheet->getRowIterator(2, 17);
+        foreach ($this->values[$this->map['sheet']] as $iteration => $values) {
+            $this->loopData($iterator, $this->map['iteration'], $values);
+        }
 
         return $this->spreadsheet;
+    }
+
+    /**
+     * @param RowIterator $iterator
+     * @param $placeholderColumn
+     * @param $values
+     * @return mixed
+     */
+    private function loopData(RowIterator $iterator, $placeholderColumn, $values)
+    {
+        foreach ($values as $placeholder => $value) {
+            $coordinates = $placeholderColumn[$placeholder] . $iterator->key();
+            $iterator->current()->getWorksheet()->setCellValue($coordinates, $value);
+        }
+        $iterator->next();
     }
 
     /**
@@ -96,10 +121,12 @@ class IteratorWriter implements WriterInterface
     private function generateMap($map)
     {
         foreach ($map as $sheet => $placeholders) {
-            foreach (array_keys($placeholders) as $placeholder) {
-                $placeholders[$placeholder] = $this->searchPlaceholder($sheet, $placeholder);
+            $coordinates = [];
+            foreach (array_keys($placeholders[0]) as $placeholder) {
+                $coordinates[$placeholder] = $this->searchPlaceholder($sheet, $placeholder);
             }
-            $this->map[$sheet] = $placeholders;
+            $this->map = ['sheet' => $sheet,
+                          'iteration' => $coordinates ];
         }
     }
 
@@ -123,7 +150,7 @@ class IteratorWriter implements WriterInterface
             }
             foreach ($cellIterator as $cell) {
                 if ($cell->getValue() == $placeholder) {
-                    return $cell->getCoordinate();
+                    return $cell->getColumn();
                 }
             }
         }
