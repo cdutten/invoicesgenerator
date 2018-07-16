@@ -1,13 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Laura
+ * User: Cesar Dutten
  * Date: 13/6/2018
  * Time: 22:28
  */
 
 namespace invoicesgenerator\contracts;
-
 
 interface InvoiceTypeInterface
 {

@@ -1,30 +1,24 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Laura
+ * User: Cesar Dutten
  * Date: 18/6/2018
  * Time: 06:16
  */
 
 namespace invoicesgenerator;
 
+use invoicesgenerator\contracts\FilesystemInterface;
 
-use invoicesgenerator\contracts\GeneratorInterface;
-
-abstract class Generator implements GeneratorInterface
+class Filesystem implements FilesystemInterface
 {
-
-    public function put($path, $content)
-    {
-
-    }
 
     /**
      * Check if a $path is writable
      * @param $path
      * @return bool
      */
-    public function isWritable($path)
+    public static function isWritable($path)
     {
         return is_writable($path);
     }
@@ -35,7 +29,7 @@ abstract class Generator implements GeneratorInterface
      * @param $path
      * @return bool
      */
-    public function exists($path)
+    public static function exists($path)
     {
         return file_exists($path);
     }
@@ -46,7 +40,7 @@ abstract class Generator implements GeneratorInterface
      * @param  string  $directory
      * @return bool
      */
-    public function isDirectory($directory)
+    public static function isDirectory($directory)
     {
         return is_dir($directory);
     }
@@ -59,7 +53,7 @@ abstract class Generator implements GeneratorInterface
      * @param bool $recursive
      * @return bool
      */
-    public function makeDirectory($path, $mode = 0755, $recursive = false)
+    public static function makeDirectory($path, $mode = 0755, $recursive = false)
     {
         return mkdir($path);
     }
@@ -70,7 +64,7 @@ abstract class Generator implements GeneratorInterface
      * @param $paths
      * @return bool
      */
-    public function delete($paths)
+    public static function delete($paths)
     {
         $paths = is_array($paths) ? $paths : func_get_args();
 
@@ -90,22 +84,22 @@ abstract class Generator implements GeneratorInterface
      * @return bool
      * @throws \Exception
      */
-    public function deleteDirectory($directory, $preserve = false)
+    public static function deleteDirectory($directory, $preserve = false)
     {
-        if (!$this->isDirectory($directory)) {
+        if (!self::isDirectory($directory)) {
             throw new \Exception("This isn't a directory");
         }
 
-        $items = new FilesystemIterator($directory);
+        $items = new \FilesystemIterator($directory);
         foreach ($items as $item) {
-            if ($item->isDir() && !$item->isLink()) {
-                $this->deleteDirectory($item->getPathname());
+            if ($item->isDir() && ! $item->isLink()) {
+                self::deleteDirectory($item->getPathname());
             } else {
-                $this->delete($item->getPathname());
+                self::delete($item->getPathname());
             }
         }
 
-        if (!$preserve){
+        if (! $preserve) {
             rmdir($directory);
         }
 
@@ -117,9 +111,10 @@ abstract class Generator implements GeneratorInterface
      *
      * @param $directory
      * @return bool
+     * @throws \Exception
      */
-    public function cleanDirectory($directory)
+    public static function cleanDirectory($directory)
     {
-        return $this->deleteDirectory($directory, true);
+        return self::deleteDirectory($directory, true);
     }
 }

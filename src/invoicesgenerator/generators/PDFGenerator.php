@@ -1,16 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Laura
+ * User: Cesar Dutten
  * Date: 13/6/2018
  * Time: 22:43
  */
 
 namespace invoicesgenerator\generators;
 
-use invoicesgenerator\Generator;
-
-class PDFGenerator extends Generator
+class PDFGenerator
 {
     public function put($path, $content)
     {
